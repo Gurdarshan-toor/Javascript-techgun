@@ -29,7 +29,6 @@
             cursor: pointer;
         }
         #color-swicher {
-
         }
         #white {
             color: #fff;
@@ -38,7 +37,7 @@
             background-color: aquamarine;
         }
         #violet {
-            background-color: #ce9aff;
+            background-color: #CE9AFF;
         }
         #black {
             background-color: #000;
@@ -48,15 +47,15 @@
   <body>
     <div class="color-swicher">
         <span class="btn" id="white" onclick="changeBG('#fff')"></span>
-        <span class="btn" id="aqua" onclick="changeBG('#7fffd4')"></span>
-        <span class="btn" id="violet" onclick="changeBG('#ce9aff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('#7FFFD4')"></span>
+        <span class="btn" id="violet" onclick="changeBG('#CE9AFF')"></span>
         <span class="btn" id="black" onclick="changeBG('#000')"></span>
     </div>
     <h1 class="text_color">Background changes</h1>
     <img
       src="https://cdn.shopify.com/s/files/1/0757/1767/3264/files/about-bg.jpg?v=1713961085"
     />
-    <p>
+    <p class="text_color">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione,
       voluptatibus repudiandae! Aut, non? Corrupti, praesentium! Ipsam rem sed
       natus cupiditate voluptatum veniam dolore ipsa odit nihil quas quae
@@ -116,14 +115,14 @@
         function changeBG(color){
             document.body.style.backgroundColor = color;
             let txt = document.getElementsByClassName("text_color");
-            if(color == "000"){
+            if(color === "#000"){
                 for (let elm of txt){
-                    elm.style.color = "fff";
-                } 
+                    elm.style.color = "#fff";
+                }
             }
             else{
                 for (let elm of txt){
-                    elm.style.color = "000";
+                    elm.style.color = "#000";
                 }
             }
         }
