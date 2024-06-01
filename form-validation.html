@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Form Validation</h1>
+        <form action="" onsubmit="return validateform()">
+            <input type="text" placeholder="user name" id="username">
+            <p id="usererror" class="error"></p>
+            <input type="password" placeholder="password" id="password">
+            <p id="passworderror" class="error"></p>
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let flag = 1;
+
+        function validateform(){
+            if (username.value == ""){
+                document.getElementById("usererror").innerHTML = "user name is empty";
+                flag = 0;
+            }
+            else if (username.value.length < 3) {
+                document.getElementById("usererror").innerHTML = "user name is require min 3 character";
+                flag = 0;
+            }
+            else {
+                document.getElementById("usererror").innerHTML = "";
+                flag = 1;
+            }
+            
+            if(password.value == ""){
+                document.getElementById("passworderror").innerHTML = "password is empty";
+                flag = 0;
+            }
+            else {
+                document.getElementById("passworderror").innerHTML = "";
+                flag = 1;
+            }
+
+            if(flag){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
