@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stopw-container">
+        <div id="time">
+            <span class="digit" id="hr">00</span>
+            <span class="txt">Hr</span>
+            <span class="digit" id="min">00</span>
+            <span class="txt">Mintus</span>
+            <span class="digit" id="sec">00</span>
+            <span class="txt">Sec</span>
+            <span class="digit" id="count">00</span>
+        </div>
+        <div id="batn-container">
+            <button class="batn" id="start" onclick="start()">Start</button>
+            <button class="batn" id="stop" onclick="stop()">Stop</button>
+            <button class="batn" id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <script src="script.js">
+      
+let hr = 0;
+let min = 0;
+let sec = 0;
+let count = 0;
 
+let timer = false;
+
+function start(){
+    timer = true;
+    stopwatch();
+}
+
+function stop(){
+    timer = false;
+}
+
+function reset(){
+    timer = false;
+}
+
+function stopwatch(){
+    if(timer == true){
+        count = count+1;
+        if(count == 100){
+            sec = sec + 1;
+            count = 0;
+        }
+        document.getElementById("sec").innerHTML = sec;
+        document.getElementById("count").innerHTML = count;
+        setTimeout("stopwatch()", 10);
+    }
+}
+    </script>
+</body>
+</html>
